@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Agency - Start Bootstrap Theme</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <script type="text/javascript">
+
+    </script>
+    <script type="text/javascript" src="http://localhost/micro-front-end/workspace/js/start_clevertap.js"></script>
+    <link rel="manifest" href="http://localhost/micro-front-end/workspace/manifest.json">
+    <script type="text/javascript" src="http://localhost/micro-front-end/workspace/clevertap_sw.js"></script>
+
+
+
+
+    <script type="text/javascript">
+        !function () {
+            var e = window.rudderanalytics = window.rudderanalytics || []; e.methods = ["load", "page", "track", "identify", "alias", "group", "ready", "reset", "getAnonymousId", "setAnonymousId", "getUserId", "getUserTraits", "getGroupId", "getGroupTraits", "startSession", "endSession"], e.factory = function (t) { return function () { e.push([t].concat(Array.prototype.slice.call(arguments))) } }; for (var t = 0; t < e.methods.length; t++) { var r = e.methods[t]; e[r] = e.factory(r) } e.loadJS = function (e, t) { var r = document.createElement("script"); r.type = "text/javascript", r.async = !0, r.src = "https://cdn.rudderlabs.com/v1.1/rudder-analytics.min.js"; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(r, a) }, e.loadJS(),
+                e.load("2NFAqU8tpJShrcCAZj9l58iE9WI", "https://clevertapqyrd.dataplane.rudderstack.com"),
+                e.page()
+        }();
+    </script>
+
+
+
+
+
+</head>
+
+<body id="page-top">
+    <h2> Hello Micro Frontend</h2>
+    <!--Microfrontends React  -->
+
+    <button onclick="startClevertap()">Start Clevertap</button>
+
+    <script type="text/javascript">
+        console.log('vai carregar rudderstack')
+        rudderanalytics.ready(() => {
+            console.log("All set!");
+        });
+
+        //onUserLogin
+        rudderanalytics.identify(
+            "1hKOmRA4el9Zt1WSfVJIVo4GRlm", {
+            firstName: "Bruno",
+            lastName: "Hauck",
+            email: "guajajaras@yahoo.com",
+            phone: "+1-202-555-0146"
+        }, {
+            page: {
+                path: "/best-seller/1",
+                referrer: "https://www.google.com/search?q=estore+bestseller",
+                search: "estore bestseller",
+                title: "The best sellers offered by EStore",
+                url: "https://www.estore.com/best-seller/1"
+            }
+        },
+            () => {
+                console.log("identify call");
+            }
+        );
+    </script>
+
+    <br />
+    <button onclick="openPopUp()">Open Popup</button>
+    <br />
+    <button onclick="login()">Login</button>
+    <div class="btn">CLOSE</div>
+    <!-- Funções do popup  -->
+    <script type="text/javascript" src="http://localhost/micro-front-end/workspace/js/popup.js"></script>
+    <!-- Funções do onUserLogin que deve ser obrigatóriamente 
+        executada com os dados do usuário toda vez que ele logar ou cadastrar no sistema -->
+    <script type="text/javascript" src="http://localhost/micro-front-end/workspace/js/login.js"></script>
+
+
+    <script type="text/javascript">
+        function login() {
+            loginCleverTap2();
+        }
+        function openPopUp() {
+            alert('opePopUp')
+            clevertap.event.push("OpenPop", {
+                "Product name": "Casio Chronograph Watch",
+                "Category": "Mens Accessories",
+                "Price": 59.99,
+            });
+        }
+    </script>
+
+
+    <iframe src="http://localhost/micro-front-end/workspace/react-micro-one/"
+        title="W3Schools Free Online Web Tutorials" width="400" height="400"></iframe>
+
+    <iframe src="http://localhost/micro-front-end/workspace/react-micro-two" title="W3Schools Free Online Web Tutorials"
+        width="400" height="400"></iframe>
+
+
+
+
+    <!-- Esse também é necessário -->
+    <!--Clevertap precisa desse códiog para que web pop funcine 
+            A função javascript startClevertap() inicialisa o SDK ela 
+            pode ser executada em qualquer momento do seu códgio
+            A partir do momento que ela for executada não é possível desabilitar a mesma sem 
+            recarregar a página se fizer um reload e não sec
+        -->
+    <a onclick="onpenPopUP()" href="#services">Open the popup</a>
+    <script type="text/javascript">
+        function onpenPopUP() {
+            clevertap.event.push("OpenPop", {
+                "Product name": "Casio Chronograph Watch",
+                "Category": "Mens Accessories",
+                "Price": 59.99,
+            });
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

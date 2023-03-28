@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
+  <head>
+
+        <!-- End Google Tag Manager -->
+    <script src="js/ct.js"></script>
+
+    <!-- <link rel="manifest" href="https://port-3000-clever-tap-web-app-integration-brunohauck677519.preview.codeanywhere.com/manifest.json"> -->
+    <noscript>You need to enable JavaScript to view the full site.</noscript>
+    <meta charset="utf-8">
+    <title>Simple website - Clevertap DEMO Web App</title>
+    <!-- <link rel="stylesheet" href="main.css"> -->
+
+    <style type="text/css">/* Caution: 'CT_Box' class is responsible for providing container, please don't remove it. */  
+    .CT_Box {    
+            background-color: #e8e8e8;    color: #434761;    
+            padding: 10px;    
+            box-sizing: border-box;    
+            border-radius: 3px;  
+            }    
+            .title {    
+                font-size: 15px;    
+                font-weight: 500;    
+                margin-bottom: 5px;  
+                }    
+            .description {    
+                font-size: 14px;    margin-bottom: 10px;  }
+    </style>
+
+  </head>
+  <body class="light-theme">
+    <!-- Google Tag Manager (noscript) -->
+
+  <!-- End Google Tag Manager (noscript) 
+    <ul>
+      <div horizontal layout>
+          <div><a href="events.html">Go to Events Page</a></div>
+          <div><a href="webhookexample.html">Go to Webhook Page</a></div>
+          <div><a href="email-unsubscribe.html">Go to email-unsubscribe Page</a></div>
+      </div>
+      <div>
+            <button class="btn">Dark</button>
+            <button id="login1" class="btn">Login 1</button>
+            <button id="login2" class="btn">Login 2</button>
+            <button id="login3" class="btn">Gmail</button>
+            <button id="logout" class="btn">Log out</button>
+            <button id="event1" class="btn">Product Clicked</button>
+            <button id="eventDiscarded" class="btn">Discarded Event</button>
+            <button id="eventWithPropertyDiscarded" class="btn">Event Discarded Prop</button>
+            <button id="profileUpdate" class="btn">Update Profile</button>
+            
+        </div>
+    </ul> -->
+
+    <div class="title">New CleverTap Web Pop-ups are awesome, so are you!</div>
+
+    <div class="description">Now add iframes, gifs, google fonts and more.</div>
+
+    <p><label for="fname">First name:</label><br />
+    <input id="fname" name="fname" type="text" value="John" /><br />
+    <label for="lname">Last name:</label><br />
+    <input id="lname" name="lname" type="text" value="Doe" /></p>
+
+
+    <div class="submit">submit</div>
+
+    <div class="btn">CLOSE</div>
+
+   
+
+    <script src="js/app.js"></script>
+
+    <div  class="btn">CLOSE - BANNER</div>
+    <script>
+    function pushEventClevertap(){
+        console.log('banner click')
+        clevertap.event.push("Cookie Aproved", {
+            "adicionaSuaPropriedade":"Por exemplo IP do usuário",
+            "Category":"Cookies",
+        }); 
+        closePopUp()
+    }    
+
+    var btn = document.querySelector('.btn');
+    var wrapper = window.parent.document.getElementById('wizParDiv2');
+    btn.addEventListener('click', closePopUp);
+    function closePopUp() { wrapper.remove(); }
+    </script>
+  </body>
+</html>
