@@ -52,13 +52,14 @@
             console.log("All set!");
         });
 
+        console.log('Clevertap - entrou 01')
+
         //onUserLogin
         rudderanalytics.identify(
-            "1hKOmRA4el9Zt1WSfVJIVo4GRlm", {
+            "1hKOmRA4el9Zt1WSfVJI", {
             firstName: "Bruno",
             lastName: "Hauck",
-            email: "guajajaras@yahoo.com",
-            phone: "+1-202-555-0146"
+            email: "guajajaras1234@yahoo.com"
         }, {
             page: {
                 path: "/best-seller/1",
@@ -75,7 +76,7 @@
     </script>
 
     <br />
-    <button onclick="openPopUp()">Open Popup</button>
+    <button onclick="openPopUp()">Open Popup 123</button>
     <br />
     <button onclick="login()">Login</button>
     <div class="btn">CLOSE</div>
@@ -87,11 +88,8 @@
 
 
     <script type="text/javascript">
-        function login() {
-            loginCleverTap2();
-        }
         function openPopUp() {
-            alert('opePopUp')
+            //alert('opePopUp')
             clevertap.event.push("OpenPop", {
                 "Product name": "Casio Chronograph Watch",
                 "Category": "Mens Accessories",
